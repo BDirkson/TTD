@@ -1,4 +1,8 @@
-const { getYieldForPlant, getYieldForCrop, getTotalYield } = require("./TTD");
+const { 
+    getYieldForPlant, 
+    getYieldForCrop, 
+    getTotalYield 
+} = require("./TTD");
 
 describe("getYieldForPlant", () => {
     const corn = {
