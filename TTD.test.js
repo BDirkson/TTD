@@ -1,9 +1,10 @@
 const { 
     getYieldForPlant, 
-    getYieldForCrop, 
-    getTotalYield 
+    //getYieldForCrop, 
+    //getTotalYield 
 } = require("./TTD");
 
+// test1
 describe("getYieldForPlant", () => {
     const corn = {
         name: "corn",
@@ -14,7 +15,8 @@ describe("getYieldForPlant", () => {
         expect(getYieldForPlant(corn)).toBe(30);
     });
 });
-
+// test2
+/*
 describe("getYieldForCrop", () => {
     test("Get yield for crop, simple", () => {
         const corn = {
@@ -29,6 +31,7 @@ describe("getYieldForCrop", () => {
     });
 });
 
+// test 3
 describe("getTotalYield", () => {
     test("Calculate total yield with multiple crops", () => {
         const corn = {
@@ -55,3 +58,4 @@ describe("getTotalYield", () => {
         expect(getTotalYield({ crops })).toBe(0);
     });
 });
+*/

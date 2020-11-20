@@ -2,13 +2,18 @@
 // test test test
 // Gebruik git add -A - Gebruik git commit -m "boodschapje" - Voeg de remote toe aan je git repository - Gebruik git push origin master
 
-const getYieldForPlant = () => {
-
+// functie 1 for test 1 - parameter is plant
+const getYieldForPlant = (plant) => {
+    return plant.yield
 }
-
  
+// functie 2 for test 2 
+
+
+
+
 module.exports = {
     getYieldForPlant,
-    getYieldForCrop,
-    getTotalYield
+    //getYieldForCrop,
+    //getTotalYield
 };
