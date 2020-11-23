@@ -23,12 +23,14 @@ const crops = [
     { crop: corn, numCrops: 5 },
     { crop: pumpkin, numCrops: 2 },
 ];
-// function 3 for test 3 - Calculate total yield with multiple crops. Use array methods to get crop info. 
+// function 3 for test 3 - Calculate total yield with multiple crops. Use array methods to get crop info. Put this info in function2.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce And use reduce to add up the crop 
+// total yields
 const getTotalYield = ({ crops }) => {
     yieldAllCrops = crops.map((crop) => {
-        return yieldAllCrops (crop)})
-}
-
+        return getYieldForCrop (crop)})
+        return yieldAllCrops.reduce((cropA, cropB) => cropA + cropB)
+};
 
 module.exports = {
     getYieldForPlant,
