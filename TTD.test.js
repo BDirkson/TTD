@@ -1,6 +1,6 @@
 const { 
     getYieldForPlant, 
-    //getYieldForCrop, 
+    getYieldForCrop 
     //getTotalYield 
 } = require("./TTD");
 
