@@ -9,7 +9,7 @@ const getYieldForPlant = (plant) => {
  
 // functie 2 for test 2 
 const getYieldForCrop = (input) => {
-    getYieldForPlant(input.crop) * input.num_crops;
+    return getYieldForPlant(input.crop) * input.num_crops;
 }
 
 
