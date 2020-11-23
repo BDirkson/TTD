@@ -12,14 +12,30 @@ const getYieldForCrop = (input) => {
     return getYieldForPlant(input.crop) * (input.numCrops);
 }
 
-// function 3 for test 3 - Calculate total yield with multiple crops. Use array methods to get corp info. 
-const getTotalYield = ({ crops }) => {
-    yieldFromCrops = crops.map(crop=>getYieldForCrop(crop));
-}
+const corn = {
+    name: "corn",
+    yield: 3,
+};
+const pumpkin = {
+    name: "pumpkin",
+    yield: 4,
+};
+const crops = [
+    { crop: corn, numCrops: 5 },
+    { crop: pumpkin, numCrops: 2 },
+];
+
+// function 3 for test 3 - Calculate total yield with multiple crops. Use array methods to get crop info. 
+const getTotalYield = crops.map((crop) => {
+    return crop.crop
+}); 
+console.log (getTotalYield);
 
 
 module.exports = {
     getYieldForPlant,
     getYieldForCrop,
-    getTotalYield
+    //getTotalYield
 };
+
+

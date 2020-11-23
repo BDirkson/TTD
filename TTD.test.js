@@ -31,6 +31,7 @@ describe("getYieldForCrop", () => {
     });
 });
 
+
 // test 3
 describe("getTotalYield", () => {
     test("Calculate total yield with multiple crops", () => {
