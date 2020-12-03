@@ -22,11 +22,11 @@ const getTotalYield = ({ crops }) => {
         return yieldOfAllCrops.reduce((cropA, cropB) => cropA + cropB)
 }
 
-// OPDRACHT 1 - function - costs for one plan (of a crop)
+// OPDRACHT 1 - function - costs for one plant (of a crop)
 const getCostsForPlant = (plant) => {
     return plant.costs
 }
-// add functionality to get costs for all crops
+// add functionality to get costs for a crop
 
 const getCostsForCrop  = (input) => {
     const costsForPlant = getCostsForPlant(input.crop);
