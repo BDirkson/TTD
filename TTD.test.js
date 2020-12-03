@@ -49,13 +49,16 @@ describe("getTotalYield", () => {
         ];
         expect(getTotalYield({ crops })).toBe(23);
     });
+})
 
-    test("Calculate total yield with 0 amount", () => {
-        const corn = {
-            name: "corn",
-            yield: 3,
-        };
-        const crops = [{ crop: corn, numCrops: 0 }];
-        expect(getTotalYield({ crops })).toBe(0);
+// OPDRACHT 1 - test
+describe("get costs for plant", () => {
+    const corn = {
+      name: "corn",
+      yield: 30,
+      costs: 15,
+    };
+    test("Get costs for one crop", () => {
+      expect(getCostsForCrop(corn)).toBe(15);
     });
-});
+  });

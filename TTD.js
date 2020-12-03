@@ -7,35 +7,32 @@ const getYieldForPlant = (plant) => {
     return plant.yield
 }
 
-// function 2 for test 2 - parameter is input. Function getYieldForPlant must returns the yield of the corn.
+// function 2 for test 2 - Parameter is input. Parameter for getYieldForPlan is input.crop (=corn).
+//  Function getYieldForPlant must returns the yield of the corn * the nummer of crops
 const getYieldForCrop = (input) => {
     return getYieldForPlant(input.crop) * (input.numCrops);
 }
-const corn = {
-    name: "corn",
-    yield: 3,
-};
-const pumpkin = {
-    name: "pumpkin",
-    yield: 4,
-};
-const crops = [
-    { crop: corn, numCrops: 5 },
-    { crop: pumpkin, numCrops: 2 },
-];
-// function 3 for test 3 - Calculate total yield with multiple crops. Use array methods to get crop info. Put this info in function2.
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce And use reduce to add up the crop 
-// total yields
+
+// function 3 for test 3 - Calculate total yield multiple crops. Parameter is object. Map to loop through objects. 
+// Get the crop type out of the loop so to speak.
+// Use getYieldForCrop to get total yield of one crop type. Reduce to accumalate yields of all the crops.
 const getTotalYield = ({ crops }) => {
-    yieldAllCrops = crops.map((crop) => {
+    yieldOfAllCrops = crops.map((crop) => {
         return getYieldForCrop (crop)})
-        return yieldAllCrops.reduce((cropA, cropB) => cropA + cropB)
-};
+        return yieldOfAllCrops.reduce((cropA, cropB) => cropA + cropB)
+}
+
+// OPDRACHT 1 - function
+const getCostsForCrop = (plant) => {
+    return plant.costs
+}
+
 
 module.exports = {
     getYieldForPlant,
     getYieldForCrop,
-    getTotalYield
+    getTotalYield,
+
 };
 
 
