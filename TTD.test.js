@@ -96,6 +96,6 @@ describe("getCostsForPlant", () => {
       costs: 3,
       sale_price: 2,
     };test("Get profit for plant", () => {
-        expect(getProfitForPlant(corn)).toBe(600);
+        expect(getProfitForPlant(corn)).toBe(57);
     });
 });
