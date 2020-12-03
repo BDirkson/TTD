@@ -3,7 +3,8 @@ const {
     getYieldForCrop, 
     getTotalYield,
     getCostsForPlant,
-    getCostsForCrop 
+    getCostsForCrop,
+    getRevenueForCrop 
 } = require("./TTD");
 
 // test1
@@ -68,3 +69,19 @@ describe("getCostsForPlant", () => {
     });
   });
  
+  // OPDRACHT 2 - test
+  describe("getRevnueForPlant", () => {
+      const corn = {
+        name: "corn",
+        yield: 30,
+        costs: 3,
+        sale_price: 2
+      };
+      const input = {
+        crop: corn,
+        num_crops: 10,
+      };
+    test("Get revenue for one crop", () => {
+        expect(getRevenueForCrop(input)).toBe(10);
+    });
+  });

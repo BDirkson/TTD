@@ -34,12 +34,25 @@ const getCostsForCrop  = (input) => {
     return costsForOneCrop;
 }
 
+// OPDRACHT 2 - function - costs for crop
+
+const getRevenueForPlant = (plant) => {
+    return plant.sales_price
+}
+// add functionality to get rev for a crop
+const getRevenueForCrop = (input) => {
+    const revForPlant = getRevenueForPlant(input.crop);
+    const revForOneCrop = revForPlant * input.num_crops;
+    return revForOneCrop;
+}
+
 module.exports = {
     getYieldForPlant,
     getYieldForCrop,
     getTotalYield,
     getCostsForPlant,
-    getCostsForCrop 
+    getCostsForCrop,
+    getRevenueForCrop 
 };
 
 
