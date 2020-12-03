@@ -47,13 +47,27 @@ const getRevenueForCrop = (input) => {
     return revForOneCrop;
 }
 
+// OPDRACHT 3 - function - profit for a for a plant = revenue - costs
+
+
+
+
+const getProfitForPlant = (plant) => {
+    return getRevenueForPlant(plant) - getCostsForPlant(plant);
+}
+
+// add functionality to profit of a crop
+
+
 module.exports = {
     getYieldForPlant,
     getYieldForCrop,
     getTotalYield,
     getCostsForPlant,
     getCostsForCrop,
-    getRevenueForCrop 
+    getRevenueForCrop,
+    getProfitForPlant,
+    //getProfitForCrop 
 };
 
 
