@@ -32,7 +32,7 @@ module.exports = {
     getYieldForPlant,
     getYieldForCrop,
     getTotalYield,
-
+    getCostsForCrop 
 };
 
 

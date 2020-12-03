@@ -1,7 +1,8 @@
 const { 
     getYieldForPlant, 
     getYieldForCrop, 
-    getTotalYield 
+    getTotalYield,
+    getCostsForCrop 
 } = require("./TTD");
 
 // test1
@@ -31,7 +32,6 @@ describe("getYieldForCrop", () => {
     });
 });
 
-
 // test 3
 describe("getTotalYield", () => {
     test("Calculate total yield with multiple crops", () => {
@@ -52,13 +52,13 @@ describe("getTotalYield", () => {
 })
 
 // OPDRACHT 1 - test
-describe("get costs for plant", () => {
+describe("getCostsForCrop", () => {
     const corn = {
       name: "corn",
       yield: 30,
       costs: 15,
     };
     test("Get costs for one crop", () => {
-      expect(getCostsForCrop(corn)).toBe(15);
+      expect(getCostsForCrop(corn)).toBe(18);
     });
   });
