@@ -6,7 +6,7 @@ const {
     getCostsForCrop,
     getRevenueForCrop,
     getProfitForPlant,
-    //getProfitForCrop  
+    getProfitForCrop  
 } = require("./TTD");
 
 // test1
@@ -15,7 +15,6 @@ describe("getYieldForPlant", () => {
         name: "corn",
         yield: 30,
     };
-
     test("Get yield for plant with no environment factors", () => {
         expect(getYieldForPlant(corn)).toBe(30);
     });
@@ -95,7 +94,12 @@ describe("getCostsForPlant", () => {
       yield: 30,
       costs: 3,
       sale_price: 2,
-    };test("Get profit for plant", () => {
-        expect(getProfitForPlant(corn)).toBe(57);
+    };
+    const input = {
+        crop: corn,
+        num_crops: 10,
+      };
+    test("Get profit for one crop", () => {
+        expect(getProfitForCrop(input)).toBe(57);
     });
 });
