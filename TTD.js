@@ -34,11 +34,12 @@ const getCostsForCrop  = (input) => {
     return costsForOneCrop;
 }
 
-// OPDRACHT 2 - function - costs for crop
+// OPDRACHT 2 - function - revenue for a for plant = sales price * yield of one plant
 
-const getRevenueForPlant = (plant) => {
-    return plant.sales_price
+const getRevenueForPlant  = (plant) => {
+    return plant.sale_price * plant.yield;
 }
+
 // add functionality to get rev for a crop
 const getRevenueForCrop = (input) => {
     const revForPlant = getRevenueForPlant(input.crop);

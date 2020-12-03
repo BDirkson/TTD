@@ -75,7 +75,7 @@ describe("getCostsForPlant", () => {
         name: "corn",
         yield: 30,
         costs: 3,
-        sale_price: 2
+        sale_price: 2,
       };
       const input = {
         crop: corn,
