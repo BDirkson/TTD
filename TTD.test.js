@@ -82,6 +82,6 @@ describe("getCostsForPlant", () => {
         num_crops: 10,
       };
     test("Get revenue for one crop", () => {
-        expect(getRevenueForCrop(input)).toBe(10);
+        expect(getRevenueForCrop(input)).toBe(600);
     });
   });
