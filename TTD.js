@@ -61,11 +61,32 @@ const getProfitForCrop = (input) => {
 //  OPDRACHT 4 - function - profit for multiple crops
 // add functionality to get profit for multiple crops
 
+const corn = {
+    name: "corn",
+    yield: 30,
+    costs: 3,
+    sale_price: 2,
+  };
+  const pumpkin = {
+      name: "pumpkin",
+      yield: 30,
+      costs: 3,
+      sale_price: 2,
+    };
+
+const crops = [
+    { crop: corn, num_crops: 10 },
+    { crop: pumpkin, num_crops: 10 },
+];
+
+
 const getTotalProfit= ({ crops }) => {
     profitOfAllCrops = crops.map((crop) => {
         return getProfitForCrop (crop)})
         return profitOfAllCrops.reduce((cropA, cropB) => cropA + cropB)
     }
+
+console.log (getTotalProfit({crops}));
 
 module.exports = {
     getYieldForPlant,
