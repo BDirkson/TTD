@@ -95,7 +95,7 @@ const corn = {
     },
   }
 const environmentFactors = {
-    sun: "high"
+    sun: "low"
 };
 const getYieldForPlantFactors = (plant, environmentFactors) => {
     return getEffectFactor(plant, environmentFactors);
