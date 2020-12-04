@@ -58,7 +58,14 @@ const getProfitForCrop = (input) => {
     const profForOneCrop = profForPlant * input.num_crops;
     return profForOneCrop;
 }
+//  OPDRACHT 4 - function - profit for multiple crops
+// add functionality to get profit for multiple crops
 
+const getTotalProfit= ({ crops }) => {
+    profitOfAllCrops = crops.map((crop) => {
+        return getProfitForCrop (crop)})
+        return profitOfAllCrops.reduce((cropA, cropB) => cropA + cropB)
+    }
 
 module.exports = {
     getYieldForPlant,
@@ -68,7 +75,8 @@ module.exports = {
     getCostsForCrop,
     getRevenueForCrop,
     getProfitForPlant,
-    getProfitForCrop 
+    getProfitForCrop,
+    getTotalProfit 
 };
 
 

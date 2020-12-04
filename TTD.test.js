@@ -6,7 +6,8 @@ const {
     getCostsForCrop,
     getRevenueForCrop,
     getProfitForPlant,
-    getProfitForCrop  
+    getProfitForCrop,
+    getTotalProfit  
 } = require("./TTD");
 
 // test1
@@ -101,5 +102,29 @@ describe("getCostsForPlant", () => {
       };
     test("Get profit for one crop", () => {
         expect(getProfitForCrop(input)).toBe(570);
+    });
+});
+
+//  OPDRACHT 4 - test
+describe("get totaal profit", () => {
+    const corn = {
+      name: "corn",
+      yield: 30,
+      costs: 3,
+      sale_price: 2,
+    };
+    const pumpkin = {
+        name: "pumpkin",
+        yield: 30,
+        costs: 3,
+        sale_price: 2,
+      };
+    const crops = [
+        { crop: corn, num_crops: 10 },
+        { crop: pumpkin, num_crops: 10 },
+    ];
+
+    test("Get profit for multiple crops", () => {
+        expect(getTotalProfit({ crops })).toBe(570);
     });
 });
