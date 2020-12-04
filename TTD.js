@@ -66,6 +66,49 @@ const getTotalProfit= ({ crops }) => {
         return profitOfAllCrops.reduce((cropA, cropB) => cropA + cropB)
     }
 
+// OPDRACHT6 - function - yield with external factors - start with plant - 
+// add new functionaliyt to switch between effect of external factors
+const getEffectFactor = (crop, environmentFactors) =>{
+    let externalFactor;
+    switch (environmentFactors.sun){
+        case "low":
+            externalFactor = (crop.yield/100) * (100 + crop.factors.sun.low);
+            break;
+        case "medium":
+            externalFactor = (crop.yield/100) * (100 + crop.factors.sun.medium);
+            break;
+        case "high":
+            externalFactor = (crop.yield/100) * (100 + crop.factors.sun.high);
+    };
+    return externalFactor;
+}
+// put effect in yield for plan function
+const corn = {
+    name: "corn",
+    yield: 30,
+    factors: {
+      sun: {
+        low: -50,
+        medium: 0,
+        high: 50,
+      },
+    },
+  }
+const environmentFactors = {
+    sun: "high"
+};
+const getYieldForPlantFactors = (plant, environmentFactors) => {
+    return getEffectFactor(plant, environmentFactors);
+}
+
+console.log (getYieldForPlantFactors(corn,environmentFactors));
+
+//const getYieldForCropFactors = (input) => {
+//    return getYieldForPlant(input.crop) * (input.numCrops);
+//}
+
+
+
 module.exports = {
     getYieldForPlant,
     getYieldForCrop,
@@ -75,7 +118,9 @@ module.exports = {
     getRevenueForCrop,
     getProfitForPlant,
     getProfitForCrop,
-    getTotalProfit 
+    getTotalProfit,
+    getYieldForPlantFactors,
+    //getYieldForCropFactors
 };
 
 
