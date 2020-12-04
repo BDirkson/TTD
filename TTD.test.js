@@ -125,6 +125,6 @@ describe("get totaal profit", () => {
     ];
 
     test("Get profit for multiple crops", () => {
-        expect(getTotalProfit({ crops })).toBe(570);
+        expect(getTotalProfit({ crops })).toBe(1140);
     });
 });
