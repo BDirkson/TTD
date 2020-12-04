@@ -95,14 +95,13 @@ const corn = {
     },
   }
 const environmentFactors = {
-    sun: "low"
+    sun: "high"
 };
 const getYieldForPlantFactors = (plant, environmentFactors) => {
     return getEffectFactor(plant, environmentFactors);
 }
 
-console.log (getYieldForPlantFactors(corn,environmentFactors));
-
+// console.log (getYieldForPlantFactors(corn,environmentFactors));
 //const getYieldForCropFactors = (input) => {
 //    return getYieldForPlant(input.crop) * (input.numCrops);
 //}
