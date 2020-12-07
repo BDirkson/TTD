@@ -121,7 +121,7 @@ const corn = {
     },
 }
 const environmentFactors = {
-    sun: "low", 
+    sun: "high", 
     wind: "medium"
 }
 const input = {
