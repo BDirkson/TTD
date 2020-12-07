@@ -285,6 +285,6 @@ describe("getProfitForCropFactors", () => {
         numCrops: 10,
     }; 
 test("Get yield for crops with factor sun is high, wind medium", () => {
-        expect(getProfitForCropFactors(corn, environmentFactors, input)).toBe(150);
+        expect(getProfitForCropFactors(corn, environmentFactors, input)).toBe(870);
 });
 });
