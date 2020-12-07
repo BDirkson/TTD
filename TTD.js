@@ -105,9 +105,9 @@ const getYieldForCropsFactors = (crop, environmentFactors, input) => {
 }
 
 // OPDRACHT10 - function = profit for crops - profit = revenue - costs
-// costs stay the same. Revenu dependin on environment factors
+// costs stay the same. Revenu depending on environment factors
 const getRevenueForCropFactors = (crop, environmentFactors, input) => {
-    return getYieldForCropsFactors (crop, environmentFactors, input) * crop.sale_price;
+    return getYieldForCropsFactors (crop, environmentFactors, input) * crop.sale_price - getCostsForCrop(input.crop) ;
 }
 
 
