@@ -9,7 +9,7 @@ const {
     getProfitForCrop,
     getTotalProfit,
     getYieldForPlantFactors,
-    //getYieldForCropFactors  
+    getYieldForCropsFactors  
 } = require("./TTD");
 
 // test1
@@ -218,6 +218,6 @@ describe("getYieldForPlantFactors", () => {
         numCrops: 10,
     }; 
 test("Get yield for plant with factor sun is high, wind low", () => {
-        expect(getYieldForPlantFactors(corn, environmentFactors)).toBe(15);
+        expect(getYieldForCropsFactors(corn, environmentFactors)).toBe(15);
 });
 });

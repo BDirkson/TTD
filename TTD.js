@@ -93,15 +93,15 @@ function getEffectFactor(crop, environmentFactors) {
     return externalFactor;
 }
 
-// OPDRACHT9 - function - yield for one plant
-const getYieldForPlantFactors = (crop, environmental_factors) => {
+// OPDRACHT6 - function - yield for one plant
+const getYieldForPlantFactors = (crop, environmentFactors) => {
     return crop.yield * getEffectFactor(crop, environmentFactors)
 }
 
 // OPDRACHT9 - function - yield for multiple crops
 
-const getYieldForCropsFactors = (crop, input, environmentFactors) => {
-    return input.numCrops * getYieldForPlant(crop, environmentFactors);
+const getYieldForCropsFactors = (crop, environmentFactors, input) => {
+    return getEffectFactor(crop, environmentFactors) * crop.yield * input.numCrops;
 }
 
 const corn = {
@@ -131,7 +131,7 @@ const input = {
 
 console.log (getEffectFactor(corn, environmentFactors))
 console.log (getYieldForPlantFactors(corn,environmentFactors));
-console.log (getYieldForCropsFactors(corn, input, environmentFactors))
+console.log (getYieldForCropsFactors(corn, environmentFactors, input))
 
 module.exports = {
     getYieldForPlant,
@@ -145,7 +145,7 @@ module.exports = {
     getTotalProfit,
     getEffectFactor,
     getYieldForPlantFactors,
-    //getYieldForCropFactors
+    getYieldForCropsFactors
 };
 
 
