@@ -105,7 +105,6 @@ console.log (getYieldForPlantFactors(corn,environmentFactors));
 console.log (getEffectFactor(corn,environmentFactors));
 
 
-
 // put effect in yield for plan function
 
 //const getYieldForCropFactors = (input) => {
