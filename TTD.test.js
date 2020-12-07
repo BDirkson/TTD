@@ -191,8 +191,8 @@ test("Get yield for plant with factor sun is high, wind high", () => {
 });
 });
 
-// Opdracht 6 - test3 
-describe("getYieldForPlantFactors", () => {
+// Opdracht 9 - test 
+describe("getYieldForCropsFactors", () => {
     const corn = {
         name: "corn",
         yield: 30,
@@ -218,6 +218,6 @@ describe("getYieldForPlantFactors", () => {
         numCrops: 10,
     }; 
 test("Get yield for crops with factor sun is low, wind medium", () => {
-        expect(getYieldForCropsFactors(corn, environmentFactors)).toBe(15);
+        expect(getYieldForCropsFactors(corn, environmentFactors, input)).toBe(15);
 });
 });
