@@ -187,7 +187,7 @@ describe("getYieldForPlantFactors", () => {
         numCrops: 10,
     }; 
 test("Get yield for plant with factor sun is high, wind low", () => {
-        expect(getYieldForPlantFactors(corn, environmentFactors)).toBe(22);
+        expect(getYieldForPlantFactors(corn, environmentFactors)).toBe(22.5);
 });
 });
 
@@ -217,7 +217,7 @@ describe("getYieldForPlantFactors", () => {
         crop: corn,
         numCrops: 10,
     }; 
-test("Get yield for plant with factor sun is high, wind low", () => {
+test("Get yield for crops with factor sun is low, wind medium", () => {
         expect(getYieldForCropsFactors(corn, environmentFactors)).toBe(15);
 });
 });
