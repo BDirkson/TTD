@@ -180,7 +180,7 @@ describe("getYieldForPlantFactors", () => {
       }
     const environmentFactors = {
         sun: "high",
-        wind: "low",
+        wind: "high",
       };
     const input = {
         crop: corn,

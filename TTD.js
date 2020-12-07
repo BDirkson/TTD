@@ -68,24 +68,33 @@ const getTotalProfit= ({ crops }) => {
 
 // OPDRACHT6 - function - yield with external factors - start with plant - 
 // add new functionaliyt to switch between effect of external factors
-const getEffectFactor = (crop, environmentFactors) =>{
-    let externalFactor;
-    switch (environmentFactors.sun){
+function getEffectFactor(crop, environmentFactors) {
+    let externalFactor = 1;
+    switch (environmentFactors.sun) {
         case "low":
-            externalFactor = (crop.yield/100) * (100 + crop.factors.sun.low);
+            externalFactor = externalFactor * (100 + crop.factors.sun.low) / 100;
             break;
         case "medium":
-            externalFactor = (crop.yield/100) * (100 + crop.factors.sun.medium);
+            externalFactor = externalFactor * (100 + crop.factors.sum.medium) / 100;
             break;
         case "high":
-            externalFactor = (crop.yield/100) * (100 + crop.factors.sun.high);
-    };
+            externalFactor = externalFactor * (100 + crop.factors.sun.high) / 100;
+    }
+    switch (environmentFactors.wind) {
+        case "low":
+            externalFactor = externalFactor * (100 + crop.factors.wind.low) / 100;
+            break;
+        case "medium":
+            externalFactor = externalFactor * (100 + crop.factors.wind.medium) / 100;
+            break;
+        case "high":
+            externalFactor = externalFactor * (100 + crop.factors.wind.high) / 100;
+    }
     return externalFactor;
 }
-const getYieldForPlantFactors = (plant, environmentFactors) => {
-    return getEffectFactor(plant, environmentFactors);
+const getYieldForPlantFactors = (crop, environmental_factors) => {
+    return crop.yield * getEffectFactor(crop, environmentFactors)
 }
-
 
 const corn = {
     name: "corn",
@@ -96,21 +105,20 @@ const corn = {
         medium: 0,
         high: 50,
       },
+      wind: {
+        low: 50,
+        medium: 0,
+        high: -50 
+      }
     },
-  }
+}
 const environmentFactors = {
-    sun: "high"
+    sun: "high", 
+    wind: "high"
 };
+
+console.log (getEffectFactor(corn, environmentFactors))
 console.log (getYieldForPlantFactors(corn,environmentFactors));
-console.log (getEffectFactor(corn,environmentFactors));
-
-
-// put effect in yield for plan function
-
-//const getYieldForCropFactors = (input) => {
-//    return getYieldForPlant(input.crop) * (input.numCrops);
-//}
-
 
 
 module.exports = {
