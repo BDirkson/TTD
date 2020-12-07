@@ -101,7 +101,7 @@ const getYieldForPlantFactors = (crop, environmentFactors) => {
 // OPDRACHT9 - function - yield for multiple crops
 
 const getYieldForCropsFactors = (crop, environmentFactors, input) => {
-    return getEffectFactor(crop, environmentFactors) * (crop.yield) * (input.numCrops);
+    return getEffectFactor(crop, environmentFactors) * crop.yield * input.numCrops;
 }
 
 const corn = {
