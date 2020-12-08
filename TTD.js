@@ -1,21 +1,18 @@
 // Start
-// test test test
-// Gebruik git add -A - Gebruik git commit -m "boodschapje" - Voeg de remote toe aan je git repository - Gebruik git push origin master
 
-// function 1 for test 1 - parameter is plant. Object 'corn' goes in functie, returning the yield of object.
+
+// function 1 for test 1 
 const getYieldForPlant = (plant) => {
     return plant.yield
 }
 
-// function 2 for test 2 - Parameter is input. Parameter for getYieldForPlan is input.crop (=corn).
-//  Function getYieldForPlant must returns the yield of the corn * the nummer of crops
-const getYieldForCrop = (input) => {
-    return getYieldForPlant(input.crop) * (input.numCrops);
+// function 2 for test 2 
+const getYieldForCrop = (crop, input) => {
+    return getYieldForPlant(crop) * (input.numCrops);
 }
 
-// function 3 for test 3 - Calculate total yield multiple crops. Parameter is object. Map to loop through objects. 
-// Get the crop type out of the loop so to speak.
-// Use getYieldForCrop to get total yield of one crop type. Reduce to accumalate yields of all the crops.
+// function 3 for test 3 
+
 const getTotalYield = ({ crops }) => {
     yieldOfAllCrops = crops.map((crop) => {
         return getYieldForCrop (crop)})
@@ -26,12 +23,18 @@ const getTotalYield = ({ crops }) => {
 const getCostsForPlant = (crop) => {
     return crop.costs
 }
+
+
+const getCostsForCrop = (crop, input) => {
+    return getCostsForPlant(crop) * (input.numCrops);
+}
+/*
 // add functionality to get costs for a crop
 const getCostsForCrop  = (input) => {
     const costsForPlant = getCostsForPlant(input.crop);
     const costsForOneCrop = costsForPlant * input.num_crops;
     return costsForOneCrop;
-} 
+} */
 
 // OPDRACHT 2 - function - revenue for a for plant = sales price * yield of one plant
 
@@ -106,8 +109,11 @@ const getYieldForCropsFactors = (crop, environmentFactors, input) => {
 // OPDRACHT10 - function = profit for crops - profit = revenue - costs
 // costs stay the same. Revenu depending on environment factors
 const getProfitForCropFactors = (crop, environmentFactors, input) => {
-    return getYieldForCropsFactors (crop, environmentFactors, input) * crop.sale_price - getCostsForPlant(crop)*input.numCrops;
+    return getYieldForCropsFactors (crop, environmentFactors, input) * crop.sale_price - getCostsForCrop(crop, input);
 }
+// OPDRACHT11 - function = total profit for multiple crops
+
+
 
 
 const corn = {
@@ -138,6 +144,7 @@ const input = {
 }; 
 
 console.log (getCostsForPlant(corn));
+console.log (getCostsForCrop(corn, input));
 console.log (getEffectFactor(corn, environmentFactors))
 console.log (getYieldForPlantFactors(corn,environmentFactors));
 console.log (getYieldForCropsFactors(corn, environmentFactors,input))

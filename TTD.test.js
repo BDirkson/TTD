@@ -69,7 +69,7 @@ describe("getCostsForPlant", () => {
         crop: corn,
         num_crops: 10,
       };
-    test("Get costs for one crop", () => {
+    test("Get costs for one plant", () => {
       expect(getCostsForCrop(input)).toBe(30);
     });
   });
@@ -219,7 +219,7 @@ describe("getYieldForCropsFactors", () => {
         numCrops: 10,
     }; 
 test("Get yield for crops with factor sun is low, wind medium", () => {
-        expect(getYieldForCropsFactors(corn, environmentFactors, input)).toBe(15);
+        expect(getYieldForCropsFactors(corn, environmentFactors, input)).toBe(150);
 });
 });
 
@@ -252,7 +252,7 @@ describe("getYieldForCropsFactors", () => {
         numCrops: 10,
     }; 
 test("Get yield for crops with factor sun is high, wind medium", () => {
-        expect(getYieldForCropsFactors(corn, environmentFactors, input)).toBe(150);
+        expect(getYieldForCropsFactors(corn, environmentFactors, input)).toBe(450);
 });
 });
 
@@ -288,3 +288,5 @@ test("Get yield for crops with factor sun is high, wind medium", () => {
         expect(getProfitForCropFactors(corn, environmentFactors, input)).toBe(870);
 });
 });
+
+// Opdracht 11 - test
