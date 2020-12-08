@@ -1,14 +1,13 @@
 // Start
 
-
 // function 1 for test 1 
 const getYieldForPlant = (plant) => {
     return plant.yield
 }
 
 // function 2 for test 2 
-const getYieldForCrop = (crop, input) => {
-    return getYieldForPlant(crop) * (input.numCrops);
+const getYieldForCrop = (input) => {
+    return getYieldForPlant(input.crop) * (input.numCrops);
 }
 
 // function 3 for test 3 
@@ -101,7 +100,7 @@ const getYieldForCropsFactors = (crop, environmentFactors, input) => {
     return getEffectFactor(crop, environmentFactors) * crop.yield * input.numCrops;
 }
 
-// OPDRACHT10 - function = profit for crops - profit = revenue - costs
+// OPDRACHT10 - function = profit for crops = revenue - costs
 // costs stay the same. Revenu depending on environment factors
 const getCostsForCropFactors = (crop, input) => {
     return getCostsForPlant(crop) * (input.numCrops);
@@ -109,16 +108,12 @@ const getCostsForCropFactors = (crop, input) => {
 const getProfitForCropFactors = (crop, environmentFactors, input) => {
     return getYieldForCropsFactors (crop, environmentFactors, input) * crop.sale_price - getCostsForCropFactors (crop, input);
 }
-// OPDRACHT11 - function = total profit for multiple crops
-
-
 
 
 module.exports = {
     getYieldForPlant,
     getYieldForCrop,
     getTotalYield,
-    getCostsForPlant,
     getCostsForCrop,
     getRevenueForCrop,
     getProfitForPlant,
@@ -127,7 +122,7 @@ module.exports = {
     getEffectFactor,
     getYieldForPlantFactors,
     getYieldForCropsFactors,
-    getProfitForCropFactors
+    getProfitForCropFactors,
 };
 
 

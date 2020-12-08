@@ -2,7 +2,6 @@ const {
     getYieldForPlant, 
     getYieldForCrop, 
     getTotalYield,
-    getCostsForPlant,
     getCostsForCrop,
     getRevenueForCrop,
     getProfitForPlant,
@@ -10,7 +9,7 @@ const {
     getTotalProfit,
     getYieldForPlantFactors,
     getYieldForCropsFactors,
-    getProfitForCropFactors 
+    getProfitForCropFactors,
 } = require("./TTD");
 
 // test1
@@ -288,5 +287,3 @@ test("Get yield for crops with factor sun is high, wind medium", () => {
         expect(getProfitForCropFactors(corn, environmentFactors, input)).toBe(870);
 });
 });
-
-// Opdracht 11 - test
