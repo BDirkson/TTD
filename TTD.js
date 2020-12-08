@@ -24,17 +24,12 @@ const getCostsForPlant = (crop) => {
     return crop.costs
 }
 
-
-const getCostsForCrop = (crop, input) => {
-    return getCostsForPlant(crop) * (input.numCrops);
-}
-/*
 // add functionality to get costs for a crop
 const getCostsForCrop  = (input) => {
     const costsForPlant = getCostsForPlant(input.crop);
     const costsForOneCrop = costsForPlant * input.num_crops;
     return costsForOneCrop;
-} */
+} 
 
 // OPDRACHT 2 - function - revenue for a for plant = sales price * yield of one plant
 
@@ -108,47 +103,16 @@ const getYieldForCropsFactors = (crop, environmentFactors, input) => {
 
 // OPDRACHT10 - function = profit for crops - profit = revenue - costs
 // costs stay the same. Revenu depending on environment factors
+const getCostsForCropFactors = (crop, input) => {
+    return getCostsForPlant(crop) * (input.numCrops);
+}
 const getProfitForCropFactors = (crop, environmentFactors, input) => {
-    return getYieldForCropsFactors (crop, environmentFactors, input) * crop.sale_price - getCostsForCrop(crop, input);
+    return getYieldForCropsFactors (crop, environmentFactors, input) * crop.sale_price - getCostsForCropFactors (crop, input);
 }
 // OPDRACHT11 - function = total profit for multiple crops
 
 
 
-
-const corn = {
-    name: "corn",
-    yield: 30,
-    costs: 3,
-    sale_price: 2,
-    factors: {
-      sun: {
-        low: -50,
-        medium: 0,
-        high: 50,
-      },
-      wind: {
-        low: 50,
-        medium: 0,
-        high: -50 
-      }
-    },
-}
-const environmentFactors = {
-    sun: "high", 
-    wind: "medium"
-}
-const input = {
-    crop: corn,
-    numCrops: 10,
-}; 
-
-console.log (getCostsForPlant(corn));
-console.log (getCostsForCrop(corn, input));
-console.log (getEffectFactor(corn, environmentFactors))
-console.log (getYieldForPlantFactors(corn,environmentFactors));
-console.log (getYieldForCropsFactors(corn, environmentFactors,input))
-console.log (getProfitForCropFactors(corn, environmentFactors,input));
 
 module.exports = {
     getYieldForPlant,
