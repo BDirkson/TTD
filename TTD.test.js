@@ -58,7 +58,7 @@ describe("getTotalYield", () => {
 })
 
 // OPDRACHT 1 - test
-describe("getCostsForPlant", () => {
+describe("getCostsForCrop", () => {
     const corn = {
       name: "corn",
       yield: 30,
@@ -68,7 +68,7 @@ describe("getCostsForPlant", () => {
         crop: corn,
         num_crops: 10,
       };
-    test("Get costs for one plant", () => {
+    test("Get costs for one crop", () => {
       expect(getCostsForCrop(input)).toBe(30);
     });
   });
