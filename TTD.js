@@ -15,7 +15,7 @@ const getYieldForCrop = (input) => {
 // function 3 for test 3 
 
 const getTotalYield = ({ crops }) => {
-    yieldOfAllCrops = crops.map((crop) => {
+    const yieldOfAllCrops = crops.map((crop) => {
         return getYieldForCrop (crop)})
         return yieldOfAllCrops.reduce((cropA, cropB) => cropA + cropB)
 }
