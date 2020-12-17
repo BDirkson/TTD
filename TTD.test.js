@@ -91,7 +91,7 @@ describe("getCostsForPlant", () => {
   });
 
   // OPDRACHT3 - test
-  describe("getprofitForPlant", () => {
+  describe("getProfitForPlant", () => {
     const corn = {
       name: "corn",
       yield: 30,
@@ -108,7 +108,7 @@ describe("getCostsForPlant", () => {
 });
 
 //  OPDRACHT 4 - test
-describe("get totaal profit", () => {
+describe("Get total profit", () => {
     const corn = {
       name: "corn",
       yield: 30,

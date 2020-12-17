@@ -1,4 +1,6 @@
 // Start
+//  'git add -A' 
+// git commit -m "details wijziging"
 
 // function 1 for test 1 
 const getYieldForPlant = (plant) => {
@@ -108,7 +110,6 @@ const getCostsForCropFactors = (crop, input) => {
 const getProfitForCropFactors = (crop, environmentFactors, input) => {
     return getYieldForCropsFactors (crop, environmentFactors, input) * crop.sale_price - getCostsForCropFactors (crop, input);
 }
-
 
 module.exports = {
     getYieldForPlant,
