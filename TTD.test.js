@@ -3,7 +3,7 @@ const {
     getYieldForCrop, 
     getTotalYield,
     getCostsForCrop,
-  //  getRevenueForCrop,
+    getRevenueForCrop,
   //  getProfitForCrop,
   //  getTotalProfit,
   //  getYieldForPlantFactors,
@@ -71,7 +71,7 @@ describe("getCostsForCrop", () => {
       expect(getCostsForCrop(input)).toBe(30);
     });
   });
- /*
+ 
   // OPDRACHT 2 - test
   describe("getRevenueForCrop", () => {
       const corn = {
@@ -89,6 +89,7 @@ describe("getCostsForCrop", () => {
     });
   });
 
+/*
   // OPDRACHT3 - test
   describe("getProfitForCrop", () => {
     const corn = {
