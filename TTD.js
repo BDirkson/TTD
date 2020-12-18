@@ -113,7 +113,7 @@ const getProfitForCropFactors = (crop, environmentFactors, input) => {
 */
 module.exports = {
     getYieldForPlant,
-    //getYieldForCrop,
+    getYieldForCrop,
     //getTotalYield,
     //getCostsForCrop,
    // getRevenueForCrop,
