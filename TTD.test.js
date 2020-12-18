@@ -7,7 +7,7 @@ const {
     getProfitForCrop,
     getTotalProfit,
     getYieldForPlantNew,
-  //  getYieldForCropsFactors,
+    getYieldForCropsNew,
  //   getProfitForCropFactors,
 } = require("./TTD");
 
@@ -191,9 +191,9 @@ test("Get yield for plant with factor sun is high, wind high", () => {
         expect(getYieldForPlantNew(corn, environmentFactors)).toBe(22.5);
 });
 });
-/*
+
 // Opdracht 9 - test 
-describe("getYieldForCropsFactors", () => {
+describe("getYieldForCropsNew", () => {
     const corn = {
         name: "corn",
         yield: 30,
@@ -219,12 +219,11 @@ describe("getYieldForCropsFactors", () => {
         numCrops: 10,
     }; 
 test("Get yield for crops with factor sun is low, wind medium", () => {
-        expect(getYieldForCropsFactors(corn, environmentFactors, input)).toBe(150);
+        expect(getYieldForCropsNew(input, corn, environmentFactors)).toBe(150);
 });
 });
-
-// Opdracht 9 - test 
-describe("getYieldForCropsFactors", () => {
+// Opdracht 9 - test 2
+describe("getYieldForCropsNew", () => {
     const corn = {
         name: "corn",
         yield: 30,
@@ -252,10 +251,10 @@ describe("getYieldForCropsFactors", () => {
         numCrops: 10,
     }; 
 test("Get yield for crops with factor sun is high, wind medium", () => {
-        expect(getYieldForCropsFactors(corn, environmentFactors, input)).toBe(450);
+        expect(getYieldForCropsNew(input, corn, environmentFactors)).toBe(450);
 });
 });
-
+/*
 // Opdracht 10 - test 
 describe("getProfitForCropFactors", () => {
     const corn = {
