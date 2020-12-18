@@ -5,7 +5,7 @@ const {
     getCostsForCrop,
     getRevenueForCrop,
     getProfitForCrop,
-  //  getTotalProfit,
+    getTotalProfit,
   //  getYieldForPlantFactors,
   //  getYieldForCropsFactors,
  //   getProfitForCropFactors,
@@ -106,14 +106,14 @@ describe("getCostsForCrop", () => {
         expect(getProfitForCrop(input)).toBe(1170);
     });
 });
-/*
+
 //  OPDRACHT 4 - test
 describe("Get total profit", () => {
     const corn = {
       name: "corn",
       yield: 30,
       costs: 3,
-      sale_price: 2,
+      sale_price: 4,
     };
     const pumpkin = {
         name: "pumpkin",
@@ -130,7 +130,7 @@ describe("Get total profit", () => {
         expect(getTotalProfit({ crops })).toBe(1140);
     });
 });
-
+/*
 //  OPDRACHT 6 - test
 describe("getYieldForPlantFactors", () => {
         const corn = {

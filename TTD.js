@@ -21,50 +21,48 @@ return getYieldOfEachCrop.reduce((accumulator, currentValue) => accumulator + cu
 
 
 // OPDRACHT 1 - function - costs for a crop
+const getCostsForCrop  = (input) => {
+    const costsForOneCrop = input.crop.costs * input.num_crops;
+    return costsForOneCrop;
+} 
+
+// OPDRACHT 2 - function - revenue for crop = sales price crop * number of plans of one crop * yield of one crop
+const getRevenueForCrop = (input) => {
+    const revForCrop = input.crop.sale_price * input.num_crops * input.crop.yield
+    return revForCrop;
+}
+// OPDRACHT 3 - function - profit for a for crop = revenue crop - costs crop
+const getProfitForCrop = (input) => {
+    const getProfCrop = getRevenueForCrop(input) - getCostsForCrop(input);
+    return getProfCrop;
+}
+
+//  OPDRACHT 4 - function - profit for multiple crops
 const corn = {
     name: "corn",
     yield: 30,
     costs: 3,
     sale_price: 4,
   };
-  const input = {
-      crop: corn,
-      num_crops: 10,
+  const pumpkin = {
+      name: "pumpkin",
+      yield: 30,
+      costs: 3,
+      sale_price: 2,
     };
-
-const getCostsForCrop  = (input) => {
-    const costsForOneCrop = input.crop.costs * input.num_crops;
-    return costsForOneCrop;
-} 
-console.log(getCostsForCrop(input)); // 3 * 10 = 30
-// OPDRACHT 2 - function - revenue for crop = sales price crop * number of plans of one crop * yield of one crop
-
-const getRevenueForCrop = (input) => {
-    const revForCrop = input.crop.sale_price * input.num_crops * input.crop.yield
-    return revForCrop;
-}
-console.log(getRevenueForCrop(input)); // 4 * 10 * 30 = 1200
-
-// OPDRACHT 3 - function - profit for a for crop = revenue crop - costs crop
-
-
-const getProfitForCrop = (input) => {
-    const getProfCrop =  
-    getRevenueForCrop(input) - getCostsForCrop(input);
-    return getProfCrop;
-}
-
-console.log (getProfitForCrop(input));
-
- /*
-//  OPDRACHT 4 - function - profit for multiple crops
-// add functionality to get profit for multiple crops
-const getTotalProfit= ({ crops }) => {
-    profitOfAllCrops = crops.map((crop) => {
-        return getProfitForCrop (crop)})
-        return profitOfAllCrops.reduce((cropA, cropB) => cropA + cropB)
+    const crops = [
+        { crop: corn, num_crops: 10 },
+        { crop: pumpkin, num_crops: 10 },
+    ];
+// corn: costs 10*3 = 30 rev. 30*4*10 = 1200 profit = 1170
+// pumpkin: costs 10*3 = 30 rev. 30*2*10 = 600 profit = 570 
+const getTotalProfit = ({ crops }) => {
+        const getProfitOfEachCrop = crops.map(crop => getProfitForCrop(crop));
+        return getProfitOfEachCrop.reduce((accumulator, currentValue) => accumulator + currentValue);
     }
 
+console.log(getTotalProfit({crops})) 
+ /*
 // OPDRACHT6 - function - yield with external factors - start with plant - 
 // add new functionaliyt to switch between effect of external factors
 function getEffectFactor(crop, environmentFactors) {
@@ -119,7 +117,7 @@ module.exports = {
     getCostsForCrop,
     getRevenueForCrop,
     getProfitForCrop,
-   // getTotalProfit,
+    getTotalProfit,
    // getEffectFactor,
    // getYieldForPlantFactors,
    // getYieldForCropsFactors,
