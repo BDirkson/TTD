@@ -160,7 +160,7 @@ describe("getYieldForPlantNew", () => {
             expect(getYieldForPlantNew(corn, environmentFactors)).toBe(45);
     });
 });
-/*
+
 // Opdracht 6 - test2 
 describe("getYieldForPlantNew", () => {
     const corn = {
@@ -188,10 +188,10 @@ describe("getYieldForPlantNew", () => {
         numCrops: 10,
     }; 
 test("Get yield for plant with factor sun is high, wind high", () => {
-        expect(getYieldForPlantFactors(corn, environmentFactors)).toBe(22.5);
+        expect(getYieldForPlantNew(corn, environmentFactors)).toBe(22.5);
 });
 });
-
+/*
 // Opdracht 9 - test 
 describe("getYieldForCropsFactors", () => {
     const corn = {
