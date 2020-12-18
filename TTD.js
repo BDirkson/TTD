@@ -14,11 +14,11 @@ const getYieldForCrop = (input) => {
 
 // function 3 for test 3 
 
-const getTotalYield = ({ crops }) => {
-    const yieldOfAllCrops = crops.map((crop) => {
-        return getYieldForCrop (crop)})
-        return yieldOfAllCrops.reduce((cropA, cropB) => cropA + cropB)
+const getTotalYield = ({ crops }) => { 
+const getYieldOfEachCrop = crops.map(crop => getYieldForCrop(crop));
+return getYieldOfEachCrop.reduce((accumulator, currentValue) => accumulator + currentValue);
 }
+
 /*
 // OPDRACHT 1 - function - costs for one plant (of a crop)
 const getCostsForPlant = (crop) => {
@@ -114,7 +114,7 @@ const getProfitForCropFactors = (crop, environmentFactors, input) => {
 module.exports = {
     getYieldForPlant,
     getYieldForCrop,
-    //getTotalYield,
+    getTotalYield,
     //getCostsForCrop,
    // getRevenueForCrop,
    // getProfitForCrop,

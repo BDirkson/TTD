@@ -1,7 +1,7 @@
 const { 
     getYieldForPlant, 
     getYieldForCrop, 
-  //  getTotalYield,
+    getTotalYield,
   //  getCostsForCrop,
   //  getRevenueForCrop,
   //  getProfitForCrop,
@@ -36,7 +36,7 @@ describe("getYieldForCrop", () => {
         expect(getYieldForCrop(input)).toBe(30);
     });
 });
-/*
+
 // test 3
 describe("getTotalYield", () => {
     test("Calculate total yield with multiple crops", () => {
@@ -55,7 +55,7 @@ describe("getTotalYield", () => {
         expect(getTotalYield({ crops })).toBe(23);
     });
 })
-
+/*
 // OPDRACHT 1 - test
 describe("getCostsForCrop", () => {
     const corn = {
