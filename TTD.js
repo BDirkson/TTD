@@ -19,7 +19,7 @@ const getTotalYield = ({ crops }) => {
         return getYieldForCrop (crop)})
         return yieldOfAllCrops.reduce((cropA, cropB) => cropA + cropB)
 }
-
+/*
 // OPDRACHT 1 - function - costs for one plant (of a crop)
 const getCostsForPlant = (crop) => {
     return crop.costs
@@ -110,19 +110,19 @@ const getCostsForCropFactors = (crop, input) => {
 const getProfitForCropFactors = (crop, environmentFactors, input) => {
     return getYieldForCropsFactors (crop, environmentFactors, input) * crop.sale_price - getCostsForCropFactors (crop, input);
 }
-
+*/
 module.exports = {
     getYieldForPlant,
-    getYieldForCrop,
-    getTotalYield,
-    getCostsForCrop,
-    getRevenueForCrop,
-    getProfitForCrop,
-    getTotalProfit,
-    getEffectFactor,
-    getYieldForPlantFactors,
-    getYieldForCropsFactors,
-    getProfitForCropFactors,
+    //getYieldForCrop,
+    //getTotalYield,
+    //getCostsForCrop,
+   // getRevenueForCrop,
+   // getProfitForCrop,
+   // getTotalProfit,
+   // getEffectFactor,
+   // getYieldForPlantFactors,
+   // getYieldForCropsFactors,
+   // getProfitForCropFactors,
 };
 
 

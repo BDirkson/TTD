@@ -1,14 +1,14 @@
 const { 
     getYieldForPlant, 
-    getYieldForCrop, 
-    getTotalYield,
-    getCostsForCrop,
-    getRevenueForCrop,
-    getProfitForCrop,
-    getTotalProfit,
-    getYieldForPlantFactors,
-    getYieldForCropsFactors,
-    getProfitForCropFactors,
+ //   getYieldForCrop, 
+  //  getTotalYield,
+  //  getCostsForCrop,
+  //  getRevenueForCrop,
+  //  getProfitForCrop,
+  //  getTotalProfit,
+  //  getYieldForPlantFactors,
+  //  getYieldForCropsFactors,
+ //   getProfitForCropFactors,
 } = require("./TTD");
 
 // test1
@@ -22,7 +22,7 @@ describe("getYieldForPlant", () => {
     });
 });
 // test2
-
+/*
 describe("getYieldForCrop", () => {
     test("Get yield for crop, simple", () => {
         const corn = {
@@ -286,3 +286,4 @@ test("Get yield for crops with factor sun is high, wind medium", () => {
         expect(getProfitForCropFactors(corn, environmentFactors, input)).toBe(870);
 });
 });
+*/
