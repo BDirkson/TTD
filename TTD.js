@@ -19,19 +19,25 @@ const getYieldOfEachCrop = crops.map(crop => getYieldForCrop(crop));
 return getYieldOfEachCrop.reduce((accumulator, currentValue) => accumulator + currentValue);
 }
 
-/*
-// OPDRACHT 1 - function - costs for one plant (of a crop)
-const getCostsForPlant = (crop) => {
-    return crop.costs
-}
 
+// OPDRACHT 1 - function - costs for one plant (of a crop)
+
+const corn = {
+    name: "corn",
+    yield: 30,
+    costs: 3,
+  };
+  const input = {
+      crop: corn,
+      num_crops: 10,
+    };
 // add functionality to get costs for a crop
 const getCostsForCrop  = (input) => {
-    const costsForPlant = getCostsForPlant(input.crop);
-    const costsForOneCrop = costsForPlant * input.num_crops;
+    const costsForOneCrop = input.crop.costs * input.num_crops;
     return costsForOneCrop;
 } 
-
+console.log (getCostsForCrop(input));
+/*
 // OPDRACHT 2 - function - revenue for a for plant = sales price * yield of one plant
 
 const getRevenueForPlant  = (plant) => {
@@ -115,7 +121,7 @@ module.exports = {
     getYieldForPlant,
     getYieldForCrop,
     getTotalYield,
-    //getCostsForCrop,
+    getCostsForCrop
    // getRevenueForCrop,
    // getProfitForCrop,
    // getTotalProfit,
