@@ -38,31 +38,13 @@ const getProfitForCrop = (input) => {
 }
 
 //  OPDRACHT 4 - function - profit for multiple crops
-const corn = {
-    name: "corn",
-    yield: 30,
-    costs: 3,
-    sale_price: 4,
-  };
-  const pumpkin = {
-      name: "pumpkin",
-      yield: 30,
-      costs: 3,
-      sale_price: 2,
-    };
-    const crops = [
-        { crop: corn, num_crops: 10 },
-        { crop: pumpkin, num_crops: 10 },
-    ];
-// corn: costs 10*3 = 30 rev. 30*4*10 = 1200 profit = 1170
-// pumpkin: costs 10*3 = 30 rev. 30*2*10 = 600 profit = 570 
+
 const getTotalProfit = ({ crops }) => {
         const getProfitOfEachCrop = crops.map(crop => getProfitForCrop(crop));
         return getProfitOfEachCrop.reduce((accumulator, currentValue) => accumulator + currentValue);
     }
 
-console.log(getTotalProfit({crops})) 
- /*
+ 
 // OPDRACHT6 - function - yield with external factors - start with plant - 
 // add new functionaliyt to switch between effect of external factors
 function getEffectFactor(crop, environmentFactors) {
@@ -89,12 +71,39 @@ function getEffectFactor(crop, environmentFactors) {
     }
     return externalFactor;
 }
+//
+const corn = {
+    name: "corn",
+    yield: 30,
+    factors: {
+      sun: {
+        low: -50,
+        medium: 0,
+        high: 50,
+      },
+      wind: {
+        low: 50,
+        medium: 0,
+        high: -50 
+      },
+    },
+  }
+const environmentFactors = {
+    sun: "high",
+  };
+const input = {
+    crop: corn,
+    numCrops: 10,
+}; 
 
 // OPDRACHT6 - function - yield for one plant
-const getYieldForPlantFactors = (crop, environmentFactors) => {
+const getYieldForPlantNew = (crop, environmentFactors) => {
     return crop.yield * getEffectFactor(crop, environmentFactors)
 }
 
+console.log(getYieldForPlantNew(corn, environmentFactors))
+
+/*
 // OPDRACHT9 - function - yield for crops
 
 const getYieldForCropsFactors = (crop, environmentFactors, input) => {
@@ -118,8 +127,7 @@ module.exports = {
     getRevenueForCrop,
     getProfitForCrop,
     getTotalProfit,
-   // getEffectFactor,
-   // getYieldForPlantFactors,
+    getYieldForPlantNew,
    // getYieldForCropsFactors,
    // getProfitForCropFactors,
 };
