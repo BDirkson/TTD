@@ -84,7 +84,10 @@ const getYieldForCropNew= (input, crop, environmentFactors) => {
 
 // OPDRACHT10 - function = profit for crops = revenue - costs
 // costs stay the same. Revenu depending on environment factors
-
+const getProfitForCropNew = (input, crop, environmentFactors) => {
+    const getProfCrop = (getRevenueForCrop(input) - getCostsForCrop(input)) * getEffectFactor(crop, environmentFactors);
+    return getProfCrop;
+}
 
 
 module.exports = {
