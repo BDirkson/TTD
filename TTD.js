@@ -21,43 +21,42 @@ return getYieldOfEachCrop.reduce((accumulator, currentValue) => accumulator + cu
 
 
 // OPDRACHT 1 - function - costs for a crop
+const corn = {
+    name: "corn",
+    yield: 30,
+    costs: 3,
+    sale_price: 4,
+  };
+  const input = {
+      crop: corn,
+      num_crops: 10,
+    };
 
 const getCostsForCrop  = (input) => {
     const costsForOneCrop = input.crop.costs * input.num_crops;
     return costsForOneCrop;
 } 
-
-// OPDRACHT 2 - function - revenue for crop = sales price crop * number of crops
-const corn = {
-    name: "corn",
-    yield: 30,
-    costs: 3,
-    sale_price: 2,
-  };
-  const input = {
-    crop: corn,
-    num_crops: 10,
-  };
+console.log(getCostsForCrop(input)); // 3 * 10 = 30
+// OPDRACHT 2 - function - revenue for crop = sales price crop * number of plans of one crop * yield of one crop
 
 const getRevenueForCrop = (input) => {
-    const revForCrop = input.crop.sale_price * input.num_crops
+    const revForCrop = input.crop.sale_price * input.num_crops * input.crop.yield
     return revForCrop;
 }
-console.log (getRevenueForCrop(input));
+console.log(getRevenueForCrop(input)); // 4 * 10 * 30 = 1200
 
+// OPDRACHT 3 - function - profit for a for crop = revenue crop - costs crop
 
-/*
-// OPDRACHT 3 - function - profit for a for a plant = revenue - costs
-const getProfitForPlant = (crop) => {
-    return getRevenueForPlant(crop) - getCostsForPlant(crop);
-}
-// add functionality to get profit for crop
 
 const getProfitForCrop = (input) => {
-    const profForPlant = getProfitForPlant(input.crop);
-    const profForOneCrop = profForPlant * input.num_crops;
-    return profForOneCrop;
+    const getProfCrop =  
+    getRevenueForCrop(input) - getCostsForCrop(input);
+    return getProfCrop;
 }
+
+console.log (getProfitForCrop(input));
+
+ /*
 //  OPDRACHT 4 - function - profit for multiple crops
 // add functionality to get profit for multiple crops
 const getTotalProfit= ({ crops }) => {
@@ -119,7 +118,7 @@ module.exports = {
     getTotalYield,
     getCostsForCrop,
     getRevenueForCrop,
-   // getProfitForCrop,
+    getProfitForCrop,
    // getTotalProfit,
    // getEffectFactor,
    // getYieldForPlantFactors,

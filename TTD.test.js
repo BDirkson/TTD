@@ -4,7 +4,7 @@ const {
     getTotalYield,
     getCostsForCrop,
     getRevenueForCrop,
-  //  getProfitForCrop,
+    getProfitForCrop,
   //  getTotalProfit,
   //  getYieldForPlantFactors,
   //  getYieldForCropsFactors,
@@ -85,28 +85,28 @@ describe("getCostsForCrop", () => {
         num_crops: 10,
       };
     test("Get revenue for one crop", () => {
-        expect(getRevenueForCrop(input)).toBe(600);
+        expect(getRevenueForCrop(input)).toBe(1200);
     });
   });
 
-/*
+
   // OPDRACHT3 - test
   describe("getProfitForCrop", () => {
     const corn = {
       name: "corn",
       yield: 30,
       costs: 3,
-      sale_price: 2,
+      sale_price: 4,
     };
     const input = {
         crop: corn,
         num_crops: 10,
       };
     test("Get profit for one crop", () => {
-        expect(getProfitForCrop(input)).toBe(570);
+        expect(getProfitForCrop(input)).toBe(1170);
     });
 });
-
+/*
 //  OPDRACHT 4 - test
 describe("Get total profit", () => {
     const corn = {
