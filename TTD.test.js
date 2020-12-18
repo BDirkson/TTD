@@ -4,7 +4,6 @@ const {
     getTotalYield,
     getCostsForCrop,
     getRevenueForCrop,
-    getProfitForPlant,
     getProfitForCrop,
     getTotalProfit,
     getYieldForPlantFactors,
@@ -74,7 +73,7 @@ describe("getCostsForCrop", () => {
   });
  
   // OPDRACHT 2 - test
-  describe("getRevnueForPlant", () => {
+  describe("getRevenueForCrop", () => {
       const corn = {
         name: "corn",
         yield: 30,
@@ -91,7 +90,7 @@ describe("getCostsForCrop", () => {
   });
 
   // OPDRACHT3 - test
-  describe("getProfitForPlant", () => {
+  describe("getProfitForCrop", () => {
     const corn = {
       name: "corn",
       yield: 30,

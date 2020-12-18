@@ -117,7 +117,6 @@ module.exports = {
     getTotalYield,
     getCostsForCrop,
     getRevenueForCrop,
-    getProfitForPlant,
     getProfitForCrop,
     getTotalProfit,
     getEffectFactor,
