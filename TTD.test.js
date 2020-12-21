@@ -261,7 +261,7 @@ describe("getProfitForCropsNew", () => {
         name: "corn",
         yield: 30,
         costs: 3,
-        sale_price: 2,
+        sale_price: 4,
         factors: {
           sun: {
             low: -50,
@@ -285,5 +285,38 @@ describe("getProfitForCropsNew", () => {
     }; 
 test("Get yield for crops with factor sun is high, wind medium", () => {
         expect(getProfitForCropNew(input, corn, environmentFactors)).toBe(450);
+});
+});
+
+// Opdracht 10 - test 
+describe("getProfitForCropsNew", () => {
+  const corn = {
+    name: "corn",
+    yield: 30,
+    costs: 3,
+    sale_price: 4,
+    factors: {
+        sun: {
+            low: -50,
+            medium: 0,
+            high: 50,
+          },
+          wind: {
+            low: 50,
+            medium: 0,
+            high: -50 
+          },
+    } 
+  };
+  const environmentFactors = {
+    sun: "high",
+    wind: "low"
+  };
+  const input = {
+      crop: corn,
+      num_crops: 10,
+    };
+test("Get yield for crops with factor sun is high, wind medium", () => {
+      expect(getProfitForCropNew(input, corn, environmentFactors)).toBe(450);
 });
 });

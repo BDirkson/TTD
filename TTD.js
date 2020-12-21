@@ -36,7 +36,6 @@ const getProfitForCrop = (input) => {
     const getProfCrop = getRevenueForCrop(input) - getCostsForCrop(input);
     return getProfCrop;
 }
-
 //  OPDRACHT 4 - function - profit for multiple crops
 
 const getTotalProfit = ({ crops }) => {
@@ -84,10 +83,39 @@ const getYieldForCropNew= (input, crop, environmentFactors) => {
 
 // OPDRACHT10 - function = profit for crops = revenue - costs
 // costs stay the same. Revenu depending on environment factors
-const getProfitForCropNew = (input, crop, environmentFactors) => {
-    const getProfCrop = (getRevenueForCrop(input) - getCostsForCrop(input)) * getEffectFactor(crop, environmentFactors);
-    return getProfCrop;
+const corn = {
+    name: "corn",
+    yield: 30,
+    costs: 3,
+    sale_price: 4,
+    factors: {
+        sun: {
+            low: -50,
+            medium: 0,
+            high: 50,
+          },
+          wind: {
+            low: 50,
+            medium: 0,
+            high: -50 
+          },
+    } 
+  };
+  const environmentFactors = {
+    sun: "high",
+    wind: "medium"
+  };
+  const input = {
+      crop: corn,
+      num_crops: 10,
+    };
+const getProfitForCropNew = (input,crop, environmentFactors) => {
+        const getProfCrop = (getRevenueForCrop(input) - getCostsForCrop(input)) * getEffectFactor(crop, environmentFactors);
+        return getProfCrop;
 }
+console.log(getRevenueForCrop(input,corn, environmentFactors));
+console.log(getCostsForCrop(input,corn, environmentFactors));
+console.log(getProfitForCropNew(input, corn, environmentFactors));
 
 
 module.exports = {
