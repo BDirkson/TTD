@@ -103,7 +103,7 @@ const corn = {
   };
   const environmentFactors = {
     sun: "high",
-    wind: "medium"
+    wind: "low"
   };
   const input = {
       crop: corn,
